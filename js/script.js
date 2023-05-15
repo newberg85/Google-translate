@@ -42,6 +42,19 @@ fromText.addEventListener("keypress", () => {
         });
 });
 
+//mobile
+fromText.addEventListener("input", () => {
+    let text = fromText.value,
+        translateFrom = selectTag[0].value,
+        translateTo = selectTag[1].value;
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            totext.value = data.responseData.translatedText;
+        });
+});
+
 icons.forEach(icon => {
     icon.addEventListener("click", ({target}) =>{
         if(target.classList.contains("fa-copy")) {
