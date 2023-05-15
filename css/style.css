@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    padding: 2rem;
+    border-bottom: 0.5px solid rgb(223, 223, 223);
+    /*box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);*/
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.translate {
+    font-size: 1.4rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: #5f6368;
+}
+
+
+.inputs_control_top {
+    margin-top: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input_text {
+    display: flex;
+}
+
+textarea {
+    width: 100%;
+    background: none;
+    resize: none;
+    border: none;
+    margin: 1rem;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+.controls_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 100%;
+}
+
+select {
+    outline: none;
+    text-transform: uppercase;
+    margin: 1rem 1rem;
+    border: none;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgb(25,103,210);
+    font-family: 'Roboto', sans-serif;
+}
+
+.opt_style {
+    color: black;
+    font-size: 1rem;
+}
+
+.wrapper {
+    padding: 0rem 7rem 0rem 7rem;
+}
+
+li {
+    list-style: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.line {
+    height: 1px;
+    background:  rgb(223, 223, 223);
+}
+
+.change_position {
+    color:#5f6368;
+    cursor: pointer;
+}
+
+i {
+    color: #5f6368;
+}
+
+.icons {
+    padding: 1rem;
+    display: flex; 
+    gap: 1.3rem;
+    font-size: 1.2rem;
+}
+
+
+
+.btn-fig {
+    padding-left: 7rem;
+    margin-top: 1rem;
+    display: flex;
+    text-align: center;
+}
+.btn-fig button {
+    width: 6rem;
+    padding: .5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: rgb(25,103,210);
+    background-color: rgb(225, 241, 255);
+    border: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    cursor:pointer;
+}
+
+.apps {
+    width: 2%;
+}
+
+.menu {
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.line_back {
+    background:  rgb(223, 223, 223);
+    margin-top: 6rem;
+    z-index: -10;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+
+@media screen and (min-width: 330px) and (max-width: 820px) {
+    .wrapper {
+        width: 100%;
+        padding: 0;
+    }
+    .input_text {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .color_background {
+        background: rgb(25,103,210);
+        color: #fff;
+    }
+    .color_background::placeholder {
+        color: #fff;
+    }
+    .controls {
+        width: 100%;
+        padding: 0;
+        background: rgb(25,103,210);
+        color: #fff;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    i {
+        color: #fff;
+    }
+    textarea {
+        width: 100%;
+        margin: 0;
+        outline: none;
+        padding: 1rem;
+        font-size: 1.6rem;
+    }
+    select {
+        color: rgb(25,103,210);
+        width: 100%;
+    }
+    .btn-fig {
+        padding: .5rem;
+    }
+    .from_icon {
+        display: none;
+    }
+    .change_position {
+        font-size: 1rem;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    .menu {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    .apps {
+        width: 1.6rem;
+    }
+    .show {
+        width: 100%;
+        color: #5f6368;
+    }
+    .header {
+        padding-left: 1rem;
+    }
+}
