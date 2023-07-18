@@ -21,7 +21,7 @@ body {
     justify-content: space-between;
     width: 100%;
     height: 2rem;
-    padding: 2rem;
+    padding: 2rem 1.5rem 2rem 1.5rem;
     border-bottom: 0.5px solid rgb(223, 223, 223);
     /*box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);*/
 }
@@ -41,17 +41,22 @@ body {
 
 
 .inputs_control_top {
-    margin-top: 1rem;
     background: #fff;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
 .input_text {
     display: flex;
+    gap: 10px;
+}
+
+.text-area {
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 8px;
+    width: 50%;
 }
 
 textarea {
@@ -82,7 +87,7 @@ select {
     width: 100%;
     font-size: 1.1rem;
     font-weight: 400;
-    color: rgb(25,103,210);
+    color: rgb(25, 103, 210);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -107,11 +112,11 @@ li {
 
 .line {
     height: 1px;
-    background:  rgb(223, 223, 223);
+    background: rgb(223, 223, 223);
 }
 
 .change_position {
-    color:#5f6368;
+    color: #5f6368;
     cursor: pointer;
 }
 
@@ -121,7 +126,7 @@ i {
 
 .icons {
     padding: 1rem;
-    display: flex; 
+    display: flex;
     gap: 1.3rem;
     font-size: 1.2rem;
 }
@@ -133,19 +138,21 @@ i {
     margin-top: 1rem;
     display: flex;
     text-align: center;
+    gap: 10px;
 }
+
 .btn-fig button {
     width: 6rem;
-    padding: .5rem;
-    border-radius: 8px;
+    padding: .3rem;
+    border-radius: 4px;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
-    color: rgb(25,103,210);
-    background-color: rgb(225, 241, 255);
+    color: rgb(25, 103, 210);
+    background-color: rgb(232, 244, 255);
     border: none;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-    cursor:pointer;
+    border: 1px solid rgb(223, 223, 223);
+    cursor: pointer;
 }
 
 .apps {
@@ -164,7 +171,7 @@ i {
 }
 
 .line_back {
-    background:  rgb(223, 223, 223);
+    background: rgb(223, 223, 223);
     margin-top: 6rem;
     z-index: -10;
     position: absolute;
@@ -177,29 +184,35 @@ i {
         width: 100%;
         padding: 0;
     }
+
     .input_text {
         display: flex;
         flex-direction: column;
-        padding: 0;
+        gap: 0;
+        width: 100%;
     }
+
+    .text-area {
+        width: 100%;
+    }
+
     .color_background {
-        background: rgb(25,103,210);
-        color: #fff;
+        background: rgb(245, 245, 245);
     }
-    .color_background::placeholder {
-        color: #fff;
-    }
+
     .controls {
         width: 100%;
         padding: 0;
-        background: rgb(25,103,210);
+        background: rgb(25, 103, 210);
         color: #fff;
         display: flex;
         flex-direction: row-reverse;
     }
+
     i {
-        color: #fff;
+        color: #5f6368
     }
+
     textarea {
         width: 100%;
         margin: 0;
@@ -207,32 +220,122 @@ i {
         padding: 1rem;
         font-size: 1.6rem;
     }
+
     select {
-        color: rgb(25,103,210);
+        color: rgb(25, 103, 210);
         width: 100%;
+        font-size: .9rem;
+        text-align: center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
     }
+
     .btn-fig {
         padding: .5rem;
     }
-    .from_icon {
-        display: none;
-    }
+
     .change_position {
         font-size: 1rem;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
+
     .menu {
         width: 100%;
         font-size: 1.1rem;
     }
+
     .apps {
         width: 1.6rem;
     }
+
     .show {
         width: 100%;
         color: #5f6368;
     }
+
     .header {
         padding-left: 1rem;
+    }
+}
+
+/* Menu */
+.logo-menu {
+    display: flex;
+    padding: 0;
+    padding: 8px 8px 8px 32px;
+}
+
+.abrir-btn {
+    position: fixed;
+}
+
+.abrir {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.abrir .logo-menu {
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 20px;
+    display: flex;
+}
+
+.logo-menu h2 {
+    color: #5f6368;
+    font-weight: 300;
+}
+
+.line {
+    width: 100%;
+    border: 1px solid #f3f3f3;
+}
+
+.sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 20px;
+}
+
+.sideMenu a {
+    white-space: nowrap;
+    padding: 20px 20px 20px 32px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #000;
+    display: block;
+    transition: 0.1s;
+    margin-top: rem;
+}
+
+.sideMenu a:hover {
+    color: #000000;
+    background-color: #f5f5f5;
+}
+
+.sideMenu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sideMenu {
+        padding-top: 15px;
+    }
+
+    .sideMenu a {
+        font-size: 18px;
     }
 }

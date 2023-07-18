@@ -1,16 +1,16 @@
 const fromText = document.querySelector(".text_from"),
-totext = document.querySelector(".to_from"),
-selectTag = document.querySelectorAll("select"),
-change = document.querySelector(".change_position"),
-translateBtn = document.getElementById("btn-translate"),
-icons = document.querySelectorAll(".row i");
+    totext = document.querySelector(".to_from"),
+    selectTag = document.querySelectorAll("select"),
+    change = document.querySelector(".change_position"),
+    translateBtn = document.getElementById("btn-translate"),
+    icons = document.querySelectorAll(".row i");
 
 selectTag.forEach((tag, id) => {
     for (const country_code in countries) {
         let selected;
-        if(id == 0 && country_code == "en-GB") {
+        if (id == 0 && country_code == "en-GB") {
             selected = "selected";
-        } else if(id == 1 && country_code == "pt-PT") {
+        } else if (id == 1 && country_code == "pt-PT") {
             selected = "selected";
         }
         let option = `<option class="opt_style" value="${country_code}" ${selected}>${countries[country_code]}</option>`;
@@ -20,11 +20,11 @@ selectTag.forEach((tag, id) => {
 
 change.addEventListener("click", () => {
     let tempText = fromText.value,
-    tempLang = selectTag[0].value;
+        tempLang = selectTag[0].value;
     fromText.value = totext.value;
     selectTag[0].value = selectTag[1].value;
-    totext.value = tempText ;
-    selectTag[1].value = tempLang ;
+    totext.value = tempText;
+    selectTag[1].value = tempLang;
 
 });
 
@@ -56,9 +56,9 @@ fromText.addEventListener("input", () => {
 });
 
 icons.forEach(icon => {
-    icon.addEventListener("click", ({target}) =>{
-        if(target.classList.contains("fa-copy")) {
-            if(target.id =="from") {
+    icon.addEventListener("click", ({ target }) => {
+        if (target.classList.contains("fa-copy")) {
+            if (target.id == "from") {
                 navigator.clipboard.writeText(fromText.value);
                 alert("texto copiado")
             } else {
@@ -66,7 +66,7 @@ icons.forEach(icon => {
             }
         } else {
             let utterance;
-            if(target.id =="from") {
+            if (target.id == "from") {
                 utterance = new SpeechSynthesisUtterance(fromText.value)
                 utterance.lang = selectTag[0].value;
             } else {
@@ -76,4 +76,25 @@ icons.forEach(icon => {
             speechSynthesis.speak(utterance);
         }
     });
+});
+
+// Menu
+
+function openNav() {
+    document.getElementById("mySideMenu").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySideMenu").style.width = "0";
+}
+
+// Evento de clique no documento (body)
+document.addEventListener("click", function (event) {
+    var menu = document.getElementById("mySideMenu");
+    var menuButton = document.querySelector("span");
+
+    // Verifica se o clique ocorreu fora do menu
+    if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        closeNav(); // Fecha o menu
+    }
 });
