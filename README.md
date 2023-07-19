@@ -30,7 +30,7 @@ A estrutura do projeto consiste em um arquivo HTML, um CSS e dois arquivos JavaS
 
 ### Links
 
-- Site: (https://lista-de-compras-tau.vercel.app/)
+- Site: [(https://lista-de-compras-tau.vercel.app/)](https://google-translate-khaki.vercel.app/)
 - api utilizada: https://mymemory.translated.net/doc/spec.php
 
 
