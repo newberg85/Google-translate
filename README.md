@@ -1,9 +1,5 @@
 <h1 align="center">Google Translate</h1>
 
-# Google-translate
-Projeto Google tradutor
-
-
 ## Tabela de conteúdos 
 
 - [overview](#overview)
